@@ -35,6 +35,12 @@ class Creator extends React.Component {
     }
   }
 
+  cancelConfirm = () => {
+    if(window.confirm('Are you sure you want to delete this?')){
+      this.handleCancel();
+    }
+  }
+
   handleCancel = () => {
     this.setState({
       value: '',
@@ -53,7 +59,7 @@ class Creator extends React.Component {
         />
         <div className={styles.buttons + (this.state.visibleButtons ? ' ' + styles.buttonsShown : '')}>
           <Button onClick={this.handleOK}>OK</Button>
-          <Button onClick={this.handleCancel} variant='danger'>cancel</Button>
+          <Button onClick={this.cancelConfirm} variant='danger'>cancel</Button>
         </div>
       </div>
     );

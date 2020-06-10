@@ -1,15 +1,18 @@
 import React from 'react';
-import {settings} from '../../data/dataStore';
 import styles from './Card.scss';
+import PropTypes from 'prop-types';
 
 
 class Card extends React.Component {
-   
 
+    static propTypes = {
+      title: PropTypes.string,
+    }
+      
     render() {
-        return (
+      return (
         <div className = {styles.component}>{this.props.title}</div>
-        )
+      );
     }
 }
 

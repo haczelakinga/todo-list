@@ -7,7 +7,7 @@ import Creator from './../Creator/Creator';
 class App extends React.Component {
 
   state = {
-    lists: this.props.lists || [],
+    lists: [],
   }
 
   addList(title){
@@ -21,8 +21,8 @@ class App extends React.Component {
             image:listData.image,
             columns:listData.columns,
             key: state.lists.length ? state.lists[state.lists.length-1].key+1 : 0,
-          }
-        ]
+          },
+        ],
       }
     ));
   }
@@ -39,15 +39,15 @@ class App extends React.Component {
           columns={listData.columns}
         />
         <div>
-            {this.state.lists.map(({key, ...listProps}) => (
+          {this.state.lists.map(({key, ...listProps}) => (
             <List key={key} {...listProps} />
-            ))}
+          ))}
         </div>
         <div className={styles.creator}>
           <Creator text={'Add new list'} action={title => this.addList(title)}/>
         </div>
       </main>
-    )
+    );
   }
 }
 

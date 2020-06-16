@@ -1,6 +1,5 @@
 // selectors
 export const getSearchString = ({searchString}) => {
-  console.log(searchString);
   return searchString;
 };
 

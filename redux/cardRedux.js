@@ -46,17 +46,19 @@ export default function reducer(state = [], action = {}) {
           const targetColumnIndex = targetColumnCards.indexOf(card);
           console.log('targetColumnIndex', targetColumnIndex);
           console.log('cardIndex', card.index);
+          
         
           if(targetColumnIndex > -1 && card.index != targetColumnIndex){
             console.log(state);
             return {...card, index: targetColumnIndex};
+            
           
           } else {
             console.log('def');
             return card;
           }
           
-        });
+        }).sort((a, b) => a.index - b.index);
       } else {
         console.log('def');
         return state;

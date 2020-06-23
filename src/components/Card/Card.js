@@ -1,22 +1,22 @@
 import React from 'react';
 import styles from './Card.scss';
 import PropTypes from 'prop-types';
-import {Draggable} from 'react-beautiful-dnd';
+// import {Draggable} from 'react-beautiful-dnd';
 
 
-const Card = ({title, id, index}) => (
-  <Draggable draggableId={id} index={index}>
-    {(provided) => (
-      <article
-        className={styles.component}
-        {...provided.draggableProps}
-        {...provided.dragHandleProps}
-        ref={provided.innerRef}
-      >
-        {title}
-      </article>
-    )}
-  </Draggable>
+const Card = ({title}) => (
+  // <Draggable draggableId={id} index={index}>
+  //   {(provided) => (
+  <article
+    className={styles.component}
+    // {...provided.draggableProps}
+    // {...provided.dragHandleProps}
+    // ref={provided.innerRef}
+  >
+    {title}
+  </article>
+  //   )}
+  // </Draggable>
 
 );
 

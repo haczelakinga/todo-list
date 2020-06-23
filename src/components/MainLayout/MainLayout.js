@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import Header from '../Header/Header';
 
 const MainLayout = ({children}) => (
-  <div>
+  <React.Fragment>
     <Header />
     {children}
-  </div>
+  </React.Fragment>
 );
 
 MainLayout.propTypes = {

@@ -5,6 +5,7 @@ import Container from '../Container/Container';
 import Icon from './../Icon/Icon';
 import {settings} from '../../data/dataStore';
 import propTypes from 'prop-types';
+import Search from './../Search/SearchContainer';
 
 export class Header extends React.Component {
 
@@ -19,6 +20,7 @@ export class Header extends React.Component {
       <header className={styles.component}>
         <Container>
           <div className={styles.wrapper}>
+            <Search />
             <Link className={styles.logo} to='/'>
               <Icon name={icon}></Icon>
             </Link>

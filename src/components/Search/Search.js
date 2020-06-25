@@ -10,10 +10,10 @@ class Search extends React.Component {
   static propTypes = {
     text: PropTypes.string,
     searchString: PropTypes.string,
-    changeSearchString: PropTypes.func,
     countVisible: PropTypes.number,
     countAll: PropTypes.number,
     history: PropTypes.object,
+    location: PropTypes.object,
   }
 
   static defaultProps = {
@@ -29,10 +29,10 @@ class Search extends React.Component {
       value: event.target.value,
       visibleButtons: event.target.value.length > 0,
     });
+    
   }
 
   handleOK(){
-    this.props.changeSearchString(this.state.value);
     this.props.history.push({
       pathname: `/search/${this.state.value}`,
       searchString: this.state.value,

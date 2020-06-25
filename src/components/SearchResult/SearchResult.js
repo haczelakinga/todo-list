@@ -3,25 +3,30 @@ import styles from './../Column/Column.scss';
 import PropTypes from 'prop-types';
 import Card from './../Card/Card';
 
-const SearchResult = ({cards}) => (
-  <section className = {styles.component}>
-    <h3 className = {styles.title}>Title
-      <span className = {styles.icon}>
-        {/* <Icon name = {icon}/> */}
-      </span>
-    </h3>
-    <div className = {styles.columns}>
-      { 
-        cards.map(cardData => (
-          <Card key={cardData.id} {...cardData} />
-        ))
-      }
-    </div>
-  </section>
-);
+export class SearchResult extends React.Component {
+  static propTypes = {
+    cards: PropTypes.array,
+    changeSearchCards: PropTypes.func,
+  }
 
-SearchResult.propTypes = {
-  cards: PropTypes.array,
-};
+  render(){
+    const {cards} = this.props;
+    return (
+      <section className = {styles.component}>
+        <h3 className = {styles.title}>Title
+          <span className = {styles.icon}>
+            {/* <Icon name = {icon}/> */}
+          </span>
+        </h3>
+        <div className = {styles.columns}>
+          { 
+            cards.map(cardData => (
+              <Card key={cardData.id} {...cardData}/>
+            ))
+          }
+        </div>
+      </section>
+    );
+  }
+}
 
-export default SearchResult;

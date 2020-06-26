@@ -21,7 +21,11 @@ class Search extends React.Component {
   }
 
   state = {
-    value: this.props.searchString,
+    value: this.getCurrentSearchString(),
+  }
+
+  getCurrentSearchString() {
+    return window.location.pathname.indexOf('/search/') > -1 ? window.location.pathname.replace('/search/', '') : '';
   }
 
   handleChange(event){
